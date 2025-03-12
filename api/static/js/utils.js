@@ -16,4 +16,3 @@ async function apiFetch(url, method='GET', body=null, headers={}) {
         console.log(error);
     }
 }
-alert('oi')

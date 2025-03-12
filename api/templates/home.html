@@ -1,3 +1,9 @@
+<!-- redireciona para a pagina de login se nao estiver logado -->
+{% if not request.user.is_authenticated %}
+  <script>
+    window.location.href = "/login";
+  </script>
+{% endif %}
 <!doctype html>
 <html lang="en">
   <head>
