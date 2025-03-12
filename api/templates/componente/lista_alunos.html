@@ -1,0 +1,26 @@
+{% load static %}
+<h1>LISTA DE ALUNOS</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">NOME</th>
+            <th scope="col">EMAIL</th>
+            <th scope="col">ACAO</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for i in usuarios %}
+            <tr id="aluno-{{i.id}}">
+                <th scope="row">{{i.id}}</th>
+                <td>{{i.username}}</td>
+                <td>{{i.password}}</td>
+                <td>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Editar</button>
+                    <button type="button" class="btn btn-danger" onclick="deletar({{i.id}})">Excluir</button>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<script src="{% static 'js/listar_alunos.js' with aluno=alunos %}"></script>
