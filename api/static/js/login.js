@@ -3,7 +3,7 @@ async function logar(evento) {
     evento.preventDefault();
     const username = document.getElementById('nome').value;
     const password = document.getElementById('senha').value;
-    const resposta = w = await apiFetch('/api/login/', 'POST', { 'username': username, 'password': password });
+    const resposta = await apiFetch('/api/login/', 'POST', { 'username': username, 'password': password });
     console.log(resposta);
     if (resposta.ok) {
         window.location.href = '/home';
